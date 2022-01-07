@@ -1,0 +1,39 @@
+<div class="container-fruid user">
+  <div class="row">
+    <%= render "shared/user_nav"%>
+    <div class="col-md-10 user-view">
+      <div class="user-view-box">
+        <div class="update-content">
+          <div class="row">
+            <h5>アカウント</h5>
+          </div>
+        </div>
+        <div class="update-content">
+          <div class="row">
+            <label class="col-md-3" for="email">
+            メールアドレス
+            </label>
+            <div class="col-md-9">
+              <%= @user.email %>
+            </div>
+          </div>
+        </div>
+        <div class="update-content">
+          <div class="row">
+            <label class="col-md-3" for="password">
+            パスワード
+            </label>
+            <div class="col-md-9">
+              *********
+            </div>
+          </div>
+        </div>
+        <div class="update-content">
+          <div class="row">
+            <%= link_to"編集",edit_user_registration_path, {class: "col-md-2 btn btn-primary my-2 mx-3"} %>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
