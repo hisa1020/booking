@@ -1,0 +1,54 @@
+<div class="container-fiuld user">
+  <div class="row">
+    <%= render"shared/user_nav" %>
+    <div class="col-lg-10 user-view">
+      <div class="user-view-box">
+        <div class="update-content">
+          <div class="row">
+            <h5>プロフィール</h5>
+          </div>
+          <%= form_with model: @user do |f| %>
+            <div class="update-content">
+              <div class="row">
+                <div class="col-md-6 offset-md-3">
+                  <div class="icon-box">
+                    <%= image_tag @user.icon.url, class: "icon-image host-icon", alt: "アイコン画像"  %>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="update-content">
+              <div class="row">
+                <label for="icon" class="col-md-3 required-a">
+                アイコン画像
+                </label>
+                <%= f.file_field :icon, :class =>'mb-4 col-md-9', placeholder: "アイコン画像をアップロード" %>
+              </div>
+            </div>
+            <div class="update-content">
+              <div class="row">
+                <label for="name" class="col-md-3 required-a">
+                名前
+                </label>
+                <%=f.text_field :name, :class =>'form-control mb-4 col-md-9', placeholder: "名前を入力" %>
+              </div>
+            </div>
+            <div class="update-content">
+              <div class="row">
+                <label for="introduction" class="col-md-3 required-a">
+                自己紹介
+                </label>
+                <%=f.text_area :introduction, :class =>'form-control mb-4 col-md-9', placeholder: "自己紹介を入力",rows: 5 %>
+              </div>
+            </div>
+            <div class="update-content">
+              <div class="row">
+                <%= f.submit"更新", {class: 'col-md-2 btn btn-primary mx-3'} %>
+              </div>
+            </div>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
